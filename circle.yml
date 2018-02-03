@@ -12,5 +12,7 @@ dependencies:
     - ~/.cache/yarn
 
 test:
+  pre:
+    - cp src/data/firebase.prod.json src/data/firebase.config.json
   override:
-    - yarn test
+    - yarn test -t src
