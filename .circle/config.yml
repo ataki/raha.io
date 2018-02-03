@@ -12,11 +12,15 @@ jobs:
       - run: yarn
       - run: yarn test -t src
 
+dependencies:
+  override:
+    - yarn
+test:
+  override:
+    - yarn test
+
 workflows:
   version: 2
   frontend:
     jobs:
-      - build:
-          filters:
-            branches:
-              only: master
+      - build
