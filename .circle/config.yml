@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/project
+    environment:
+      CI: true
+    machine:
+      node:
+        version: 9.2.1
+    steps:
+      - checkout
+      - run: yarn
+      - run: yarn test -t src
+
+workflows:
+  version: 2
+  frontend:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
