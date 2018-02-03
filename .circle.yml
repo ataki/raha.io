@@ -2,6 +2,8 @@ machine:
   environment:
     PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
     CI: true
+  node:
+    version: 9.2.1
 
 dependencies:
   override:
